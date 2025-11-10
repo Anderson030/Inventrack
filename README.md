@@ -19,22 +19,12 @@ Stack
 
 Package layout
 -
-com.inventory.Inventrack
-├─ auth/                     # JWT, login helpers
-├─ common/                   # exceptions, utils 
-├─ config/                   # security, CORS, Swagger, data source
-├─ domain/
-│  ├─ entity/                # JPA entities
-│  ├─ dto/                   # request/response DTOs
-│  ├─ repo/                  # repositories
-│  └─ service/               # business services
-├─ web/
-│  ├─ controller/            # REST controllers
-│  └─ advice/                # error handlers
-└─ InventrackApplication.java
+
+<img width="550" height="325" alt="image" src="https://github.com/user-attachments/assets/a8f2c3f3-a9da-4a11-b3b8-ac5f71664a80" />
+
 
 2) MVP Features
- -
+   -
 
 Categories Management
 Covers: US 1, 2, 3
@@ -89,12 +79,12 @@ Covers: US 4
 
 Profit by category and total.
 
-Capital / Investment (S2)
+Capital / Investment 
 Covers: US 5
 
 Record capital entries separated from inventory.
 
-3) User Stories (English – B1 level)
+3) User Stories 
 
 ADMIN – As an ADMIN, I want to create categories with a unique name so that I can organize the catalog, use filters/search, and keep products ordered.
 
@@ -127,3 +117,12 @@ OPERATOR – As an OPERATOR, I want to create a purchase with supplier and items
 OPERATOR – As an OPERATOR, I want to see the purchase with its items and totals so that I can audit costs and check what entered.
 
 OPERATOR – As an OPERATOR, I want to create a sale with client and items (product, quantity, price) so that I decrease stock and register outputs that affect inventory.
+
+
+
+
+<img width="1558" height="972" alt="image" src="https://github.com/user-attachments/assets/7d38a39e-8179-4746-99e4-ff7227575eae" />
+
+
+<img width="985" height="689" alt="image" src="https://github.com/user-attachments/assets/73d923a2-3b55-41cf-8553-aaecf58296d7" />
+
