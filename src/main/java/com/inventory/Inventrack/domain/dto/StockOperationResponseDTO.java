@@ -4,7 +4,7 @@ import com.inventory.Inventrack.domain.entity.Product;
 
 import java.time.LocalDateTime;
 
-public class StockOperationsResponseDTO {
+public class StockOperationResponseDTO {
     private Long id;
     private Product product;
     private String operation_type;
