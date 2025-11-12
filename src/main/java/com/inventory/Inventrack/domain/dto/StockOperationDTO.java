@@ -4,7 +4,7 @@ package com.inventory.Inventrack.domain.dto;
 
 import java.time.LocalDateTime;
 
-public class StockOperationsDTO {
+public class StockOperationDTO {
     private Long id;
     private Long productId;
     private String operationType;
@@ -12,9 +12,9 @@ public class StockOperationsDTO {
     private String reason;
     private LocalDateTime operationDate;
 
-    public StockOperationsDTO() {}
+    public StockOperationDTO() {}
 
-    public StockOperationsDTO(Long id, Long productId, String operationType, Integer quantity, String reason, LocalDateTime operationDate) {
+    public StockOperationDTO(Long id, Long productId, String operationType, Integer quantity, String reason, LocalDateTime operationDate) {
         this.id = id;
         this.productId = productId;
         this.operationType = operationType;
