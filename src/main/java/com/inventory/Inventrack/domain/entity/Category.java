@@ -10,7 +10,7 @@ import lombok.*;
 @Table(name = "categories")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Category {
