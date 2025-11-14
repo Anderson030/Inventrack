@@ -1,20 +1,21 @@
-package com.inventory.Inventrack.domain.repo.implementRepository;
+package com.inventory.Inventrack.domain.service.impl;
 
-import com.inventory.Inventrack.domain.repo.GenericRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.inventory.Inventrack.domain.repository.GenericRepository;
+import com.inventory.Inventrack.domain.service.interfaces.GenericService;
 import org.springframework.data.repository.NoRepositoryBean;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractGenericImplementRepository<T, ID> implements GenericRepository<T, ID> {
+public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
 
-    protected final Repository<T, ID> repository;
+    protected GenericRepository<T, ID> repository;
 
-    protected AbstractGenericImplementRepository(Repository<T, ID> repository){
+    protected ServiceGenericImpl(GenericRepository<T, ID> repository){
         this.repository = repository;
     }
+
     @Override
     public T save(T entity) {
         return repository.save(entity);
@@ -32,14 +33,11 @@ public abstract class AbstractGenericImplementRepository<T, ID> implements Gener
 
     @Override
     public void deleteByID(ID id) {
-        repository.deleteById(id);
+        repository.deleteByID(id);
     }
 
     @Override
     public boolean existsById(ID id) {
         return repository.existsById(id);
     }
-
-    @NoRepositoryBean
-    public interface Repository<T, ID> extends JpaRepository<T, ID>{}
 }
