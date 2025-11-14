@@ -1,7 +1,6 @@
 package com.inventory.Inventrack.web.controller;
 
 import com.inventory.Inventrack.domain.dto.*;
-import com.inventory.Inventrack.domain.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
