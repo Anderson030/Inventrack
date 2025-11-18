@@ -1,6 +1,6 @@
 package com.inventory.Inventrack.domain.service.impl;
 
-import com.inventory.Inventrack.domain.repository.GenericRepository;
+import com.inventory.Inventrack.domain.repository.interfaces.GenericRepository;
 import com.inventory.Inventrack.domain.service.interfaces.GenericService;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
 
     protected GenericRepository<T, ID> repository;
@@ -32,8 +33,8 @@ public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
     }
 
     @Override
-    public void deleteByID(ID id) {
-        repository.deleteByID(id);
+    public void deleteById(ID id) {
+        repository.deleteById(id);
     }
 
     @Override

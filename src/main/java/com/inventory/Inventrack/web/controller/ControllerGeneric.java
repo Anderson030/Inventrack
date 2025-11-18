@@ -32,10 +32,10 @@ public class ControllerGeneric<T, ID>{
 
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable ID id){
-        genericService.deleteByID(id);
+        genericService.deleteById(id);
     }
 
-    @PostMapping
+    @GetMapping("exists/{id}")
     public boolean existById(@PathVariable ID id){
         return genericService.existsById(id);
     }

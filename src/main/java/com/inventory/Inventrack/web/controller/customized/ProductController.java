@@ -1,16 +1,30 @@
 package com.inventory.Inventrack.web.controller.customized;
 
 import com.inventory.Inventrack.domain.entity.Product;
-import com.inventory.Inventrack.domain.service.interfaces.GenericService;
+import com.inventory.Inventrack.domain.service.interfaces.customized.ProductService;
 import com.inventory.Inventrack.web.controller.ControllerGeneric;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+@CrossOrigin(origins = "http://localhost:8080")
 @Controller
-@RequestMapping("user")
-@RequiredArgsConstructor
-public class ProductController {
+@RequestMapping("/product")
+public class ProductController extends ControllerGeneric<Product, Long> {
 
-    private final ControllerGeneric<Product, Long> controllerGeneric;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        super(productService);
+        this.productService = productService;
+    }
+    @GetMapping("sku/{sku}")
+    public Optional<Product> findBySku(@PathVariable String sku){
+        return productService.findBySku(sku);
+    }
+    @DeleteMapping("sku/{sku}")
+    public void deleteBySku(@PathVariable String sku){
+        productService.deleteBySku(sku);
+    }
 }
