@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8080")
-@Controller
+@RestController
 @RequestMapping("/product")
 public class ProductController extends ControllerGeneric<Product, Long> {
 

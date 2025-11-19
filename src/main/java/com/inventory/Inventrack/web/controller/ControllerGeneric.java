@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class ControllerGeneric<T, ID>{
+public abstract class ControllerGeneric<T, ID>{
 
     private final GenericService<T, ID> genericService;
 

@@ -3,11 +3,12 @@ package com.inventory.Inventrack.domain.service.impl;
 import com.inventory.Inventrack.domain.repository.interfaces.GenericRepository;
 import com.inventory.Inventrack.domain.service.interfaces.GenericService;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 @Transactional
 public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
 
