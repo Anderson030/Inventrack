@@ -2,12 +2,13 @@ package com.inventory.Inventrack.domain.repository.JPAImpl;
 
 import com.inventory.Inventrack.domain.repository.interfaces.GenericRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
 import java.util.Optional;
-@Repository
+@NoRepositoryBean
 public class JPARepositoryGenericImpl<T, ID> implements GenericRepository<T, ID> {
 
     private final JpaRepository<T, ID> jpaRepository;
