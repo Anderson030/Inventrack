@@ -1,8 +1,7 @@
 package com.inventory.Inventrack.domain.service.impl;
 
-import com.inventory.Inventrack.domain.repository.interfaces.GenericRepository;
 import com.inventory.Inventrack.domain.service.interfaces.GenericService;
-import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,11 +11,7 @@ import java.util.Optional;
 @Transactional
 public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
 
-    protected GenericRepository<T, ID> repository;
-
-    protected ServiceGenericImpl(GenericRepository<T, ID> repository){
-        this.repository = repository;
-    }
+    protected JpaRepository<T, ID> repository;
 
     @Override
     public T save(T entity) {

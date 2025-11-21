@@ -1,43 +1,42 @@
 package com.inventory.Inventrack.web.controller;
 
-import com.inventory.Inventrack.domain.entity.User;
 import com.inventory.Inventrack.domain.service.interfaces.GenericService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/User")
-public class UserController{
-    private final GenericService<User, Long> genericService;
 
-    public UserController(GenericService<User, Long> genericService) {
+public class ControllerGeneric<T, ID>{
+
+    private final GenericService<T, ID> genericService;
+
+    public ControllerGeneric(GenericService<T, ID> genericService) {
         this.genericService = genericService;
     }
 
     @PostMapping
-    public User save(@RequestBody User entity) {
+    public T save(@RequestBody T entity) {
         genericService.save(entity);
         return entity;
     }
     @GetMapping
-    public List<User> findAll(){
+    public List<T> findAll(){
         return genericService.findAll();
     }
 
     @GetMapping("{id}")
-    public Optional<User> findById(@PathVariable Long id) {
+    public Optional<T> findById(@PathVariable ID id) {
         return genericService.findById(id);
     }
 
     @DeleteMapping("{id}")
-    public void deleteById(@PathVariable Long id){
+    public void deleteById(@PathVariable ID id){
         genericService.deleteById(id);
     }
 
     @GetMapping("exists/{id}")
-    public boolean existById(@PathVariable Long id){
+    public boolean existById(@PathVariable ID id){
         return genericService.existsById(id);
     }
 }
