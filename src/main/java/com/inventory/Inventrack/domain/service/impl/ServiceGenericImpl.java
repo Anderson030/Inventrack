@@ -13,6 +13,10 @@ public class ServiceGenericImpl<T, ID> implements GenericService<T, ID> {
 
     protected JpaRepository<T, ID> repository;
 
+    public ServiceGenericImpl(JpaRepository<T, ID> repository) {
+        this.repository = repository;
+    }
+
     @Override
     public T save(T entity) {
         return repository.save(entity);

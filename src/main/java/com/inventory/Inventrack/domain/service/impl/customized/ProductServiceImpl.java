@@ -16,6 +16,7 @@ public class ProductServiceImpl extends ServiceGenericImpl<Product, Long> implem
     private final ProductRepository productRepository;
 
     public ProductServiceImpl(ProductRepository productRepository) {
+        super(productRepository);
         this.productRepository = productRepository;
     }
 
